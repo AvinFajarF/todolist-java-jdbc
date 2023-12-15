@@ -3,6 +3,7 @@ package project.todo.list.first.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table
 public class TodoList {
 
     @Id
