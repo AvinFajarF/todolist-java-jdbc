@@ -46,6 +46,8 @@ public class TodoListServiceImpl implements TodoListService{
 //        check jika ada request todo
         if (todo != null && !todo.isEmpty()){
             todoList.setTodo(todo);
+
+            todoListRepository.save(todoList);
         }
     }
 

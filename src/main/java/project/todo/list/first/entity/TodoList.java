@@ -3,12 +3,19 @@ package project.todo.list.first.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "todo")
 public class TodoList {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @SequenceGenerator(
+            name = "todo_sequance",
+            sequenceName =  "todo_sequance",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "todo_sequance"
+    )    private Long id;
 
     public TodoList(String todo) {
         this.todo = todo;
